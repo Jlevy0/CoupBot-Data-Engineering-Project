@@ -1,8 +1,8 @@
 # CoupBot Data Engineering Project
 ## Introduction
-In this repository you will find the scripts I used to create an automated pipeline for the data I generate with my [CoupBot Discord bot](https://github.com/Jlevy0/CoupBot). The purpose of this project was to introduce myself to some of the basics of Apache Airflow, as well as practice my Python and SQL skills. Data harvested from the Discord server that CoupBot administrates is written to a CSV file, which is then transferred on a nightly basis to the PSQL server using the scripts found in this repository. 
+In this repository you will find the scripts I used to create an automated pipeline for the data I generate with my [CoupBot Discord bot](https://github.com/Jlevy0/CoupBot). The purpose of this project was to introduce myself to some of the basics of Apache Airflow, as well as practice my Python and SQL skills. Data harvested from the Discord server that CoupBot administrates is written to a CSV file, which is then transferred on a nightly basis to the PSQL server.
 
-You may find it useful to look at the [data cog for CoupBot](https://github.com/Jlevy0/CoupBot/blob/main/CoupBot-main/cogs/data.py). This shows how exactly I extract the data from the Discord server, as well as some of the small transformations I do to the data to get it into a more appropriate format for PSQL. 
+You may find it useful to look at the [data cog for CoupBot](https://github.com/Jlevy0/CoupBot/blob/main/CoupBot-main/cogs/data.py). This shows how I extract the data from the Discord server, as well as some of the small transformations I do to the data to get it into a more appropriate format for PSQL. 
 
 
 ## Data Architecture
