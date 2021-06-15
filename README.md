@@ -15,3 +15,9 @@ Once the data is written to the CSV file, it is then transferred to the PSQL ser
 ## Data Model
 ![data_model](README_Images/data_model.png)
 This is what the PSQL schema for this project looks like. This schema was set up using the [CoupBotDE_Full_Load.py](https://github.com/Jlevy0/CoupBot-Data-Engineering-Project/blob/main/dags/tasks/CoupBotDE_Full_Load.py) script. Unlike the incremental load script, this is only supposed to be run once, just to set up the tables and load in the data for the first time. The incremental load script then handles the daily updates.  
+
+## Incremental Loading
+The incremental load process is straightforward. At midnight, the existing data in the PSQL tables is removed using the TRUNCATE TABLE statement. We then run the COPY statement to copy the data from each CSV to their respective table. The airflow dag file makes sure that these two things happen every night and in the correct order. Lastly, the process is logged so that in case anything breaks, we can see what happened. 
+
+## Some Final Thoughts
+I took a linear approach to this project. Figure out how to set up a PSQL server, figure out how to get the CSV data into the server, figure out how to set up Airflow, etc. However, I think I underestimated just how much Airflow does for you. In the future, I'd like to take advantage of some of those features, partiuclarly if I'm going to do a project with, say, multiple dependencies.
